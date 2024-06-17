@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
@@ -73,17 +70,15 @@ function Locations() {
                                 ))}
                             </div>
                           </div>
-           
-                </div>
-              ))
-            : null
-        )
-      : null
-  )}
-</div>
+                        </div>
+                      ))
+                    : null
+                )
+              : null
+          )}
+        </div>
+      </div>
   </div>
-    </div>
-  );
-}
-
+ );
+ }
 export default Locations;
