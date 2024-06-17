@@ -192,151 +192,151 @@
                                       </div>
                                       <p className="mb-2">Author: {book.author}</p>
                                       <p className="mb-2">Publisher: {book.publisherName}</p>
-<p className="mb-2">Total Copies: {book.totalCopies}</p>
-<p className="mb-2">Price: ${book.price}</p>
-<button
-className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2"
-onClick={() => handleViewMore(book)}
->
-View More
-</button>
-<button
-className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
-onClick={() => handleBuyBook(book)}
-disabled={book.totalCopies === 0}
->
-Buy
-</button>
-</div>
-))}
-</div>
-</div>
-) : (
-<>
-{searchTerm ? (
-<div className="mb-8">
-<h2 className="text-2xl font-bold mb-4">Search Results</h2>
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-{filteredBooks.length > 0 ? (
-filteredBooks.map((book) => (
-<div key={book._id} className="bg-white rounded shadow-md p-4 relative">
-<img src={book.imgUrl} alt={book.bookName} className="w-full object-cover mb-4" />
-<div className="flex justify-between items-center mb-2">
-<h3 className="text-lg font-bold">{book.bookName}</h3>
-<button
-className={`py-2 px-4 rounded ${wishlist.includes(book) ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
-onClick={() => toggleWishlist(book)}
->
-<FontAwesomeIcon icon={wishlist.includes(book) ? solidHeart : regularHeart} />
-</button>
-</div>
-<p className="mb-2">Author: {book.author}</p>
-<p className="mb-2">Publisher: {book.publisherName}</p>
-<p className="mb-2">Total Copies: {book.totalCopies}</p>
-<p className="mb-2">Price: ${book.price}</p>
-<button
-className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2"
-onClick={() => handleViewMore(book)}
->
-View More
-</button>
-<button
-className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
-onClick={() => handleBuyBook(book)}
-disabled={book.totalCopies === 0}
->
-Buy
-</button>
-</div>
-))
-) : (
-<p>No books found matching your search criteria.</p>
-)}
-</div>
-</div>
-) : (
-<>
-{publishers.map((publisher) => (
-<div key={publisher.publisherName} className="mb-8">
-<h2 className="text-2xl font-bold mb-4">Publisher: {publisher.publisherName}</h2>
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-{publisher.authors.flatMap((author) =>
-author.books.map((book) =>
-book && (
-<div key={book._id} className="bg-white rounded shadow-md p-4 relative">
-<img src={book.imgUrl} alt={book.bookName} className="w-full object-cover mb-4" />
-<div className="flex justify-between items-center mb-2">
-<h3 className="text-lg font-bold">{book.bookName}</h3>
-<button
-className={`py-2 px-4 rounded ${wishlist.includes(book) ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
-onClick={() => toggleWishlist(book)}
->
-<FontAwesomeIcon icon={wishlist.includes(book) ? solidHeart : regularHeart} />
-</button>
-</div>
-<p className="mb-2">Author: {author.authorName}</p>
-<p className="mb-2">Publisher: {publisher.publisherName}</p>
-<p className="mb-2">Total Copies: {book.totalCopies}</p>
-<p className="mb-2">Price: ${book.price}</p>
-<button
-className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2"
-onClick={() => handleViewMore(book)}
->
-View More
-</button>
-<button
-className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
-onClick={() => handleBuyBook(book)}
-disabled={book.totalCopies === 0}
->
-Buy
-</button>
-</div>
-)
-)
-)}
-</div>
-</div>
-))}
-</>
-)}
-</>
-)}
-</div>
-</main>
-{selectedBook && (
-<div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
-<div className="bg-white rounded p-8 w-full max-w-lg flex">
-<div className="flex-shrink-0 mr-4">
-<img src={selectedBook?.imgUrl} alt={selectedBook?.bookName} className="object-contain h-60" />
-</div>
-<div>
-<h2 className="text-xl font-bold">{selectedBook?.bookName}</h2>
-<p><strong>Author:</strong> {selectedBook?.author}</p>
-<p><strong>Description:</strong> {selectedBook?.description}</p>
-<p><strong>Publisher Date:</strong> {new Date(selectedBook?.publisherDate).toLocaleDateString()}</p>
-<p><strong>Total Copies:</strong> {selectedBook?.totalCopies}</p>
-<button
-             onClick={closeModal}
-             className="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded"
-           >
-Close
-</button>
-<button
-onClick={() => handleBuyBook(selectedBook)}
-className="mt-4 bg-orangered text-white font-bold py-2 px-4 rounded ml-4"
->
-Buy
-</button>
-</div>
-</div>
-</div>
-)}
-{showPurchaseModal && (
-    <PurchaseModal message={purchaseMessage} onClose={closeModal} />
-  )}
-</div>
-);
-};
-export default UserDashboard;
-
+                                      <p className="mb-2">Total Copies: {book.totalCopies}</p>
+                                      <p className="mb-2">Price: ${book.price}</p>
+                                      <button
+                                      className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2"
+                                      onClick={() => handleViewMore(book)}
+                                      >
+                                      View More
+                                      </button>
+                                      <button
+                                      className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                                      onClick={() => handleBuyBook(book)}
+                                      disabled={book.totalCopies === 0}
+                                      >
+                                      Buy
+                                      </button>
+                                      </div>
+                                      ))}
+                                      </div>
+                                      </div>
+                                      ) : (
+                                      <>
+                                      {searchTerm ? (
+                                      <div className="mb-8">
+                                      <h2 className="text-2xl font-bold mb-4">Search Results</h2>
+                                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                                      {filteredBooks.length > 0 ? (
+                                      filteredBooks.map((book) => (
+                                      <div key={book._id} className="bg-white rounded shadow-md p-4 relative">
+                                      <img src={book.imgUrl} alt={book.bookName} className="w-full object-cover mb-4" />
+                                      <div className="flex justify-between items-center mb-2">
+                                      <h3 className="text-lg font-bold">{book.bookName}</h3>
+                                      <button
+                                      className={`py-2 px-4 rounded ${wishlist.includes(book) ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
+                                      onClick={() => toggleWishlist(book)}
+                                      >
+                                      <FontAwesomeIcon icon={wishlist.includes(book) ? solidHeart : regularHeart} />
+                                      </button>
+                                      </div>
+                                      <p className="mb-2">Author: {book.author}</p>
+                                      <p className="mb-2">Publisher: {book.publisherName}</p>
+                                      <p className="mb-2">Total Copies: {book.totalCopies}</p>
+                                      <p className="mb-2">Price: ${book.price}</p>
+                                      <button
+                                      className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2"
+                                      onClick={() => handleViewMore(book)}
+                                      >
+                                      View More
+                                      </button>
+                                      <button
+                                      className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                                      onClick={() => handleBuyBook(book)}
+                                      disabled={book.totalCopies === 0}
+                                      >
+                                      Buy
+                                      </button>
+                                      </div>
+                                      ))
+                                      ) : (
+                                      <p>No books found matching your search criteria.</p>
+                                      )}
+                                      </div>
+                                      </div>
+                                      ) : (
+                                      <>
+                                      {publishers.map((publisher) => (
+                                      <div key={publisher.publisherName} className="mb-8">
+                                      <h2 className="text-2xl font-bold mb-4">Publisher: {publisher.publisherName}</h2>
+                                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                                      {publisher.authors.flatMap((author) =>
+                                      author.books.map((book) =>
+                                      book && (
+                                      <div key={book._id} className="bg-white rounded shadow-md p-4 relative">
+                                      <img src={book.imgUrl} alt={book.bookName} className="w-full object-cover mb-4" />
+                                      <div className="flex justify-between items-center mb-2">
+                                      <h3 className="text-lg font-bold">{book.bookName}</h3>
+                                      <button
+                                      className={`py-2 px-4 rounded ${wishlist.includes(book) ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
+                                      onClick={() => toggleWishlist(book)}
+                                      >
+                                      <FontAwesomeIcon icon={wishlist.includes(book) ? solidHeart : regularHeart} />
+                                      </button>
+                                      </div>
+                                      <p className="mb-2">Author: {author.authorName}</p>
+                                      <p className="mb-2">Publisher: {publisher.publisherName}</p>
+                                      <p className="mb-2">Total Copies: {book.totalCopies}</p>
+                                      <p className="mb-2">Price: ${book.price}</p>
+                                      <button
+                                      className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2"
+                                      onClick={() => handleViewMore(book)}
+                                      >
+                                      View More
+                                      </button>
+                                      <button
+                                      className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                                      onClick={() => handleBuyBook(book)}
+                                      disabled={book.totalCopies === 0}
+                                      >
+                                      Buy
+                                      </button>
+                                      </div>
+                                      )
+                                      )
+                                      )}
+                                      </div>
+                                      </div>
+                                      ))}
+                                      </>
+                                      )}
+                                      </>
+                                      )}
+                                      </div>
+                                      </main>
+                                      {selectedBook && (
+                                      <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                                      <div className="bg-white rounded p-8 w-full max-w-lg flex">
+                                      <div className="flex-shrink-0 mr-4">
+                                      <img src={selectedBook?.imgUrl} alt={selectedBook?.bookName} className="object-contain h-60" />
+                                      </div>
+                                      <div>
+                                      <h2 className="text-xl font-bold">{selectedBook?.bookName}</h2>
+                                      <p><strong>Author:</strong> {selectedBook?.author}</p>
+                                      <p><strong>Description:</strong> {selectedBook?.description}</p>
+                                      <p><strong>Publisher Date:</strong> {new Date(selectedBook?.publisherDate).toLocaleDateString()}</p>
+                                      <p><strong>Total Copies:</strong> {selectedBook?.totalCopies}</p>
+                                      <button
+                                                   onClick={closeModal}
+                                                   className="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                                                 >
+                                      Close
+                                      </button>
+                                      <button
+                                      onClick={() => handleBuyBook(selectedBook)}
+                                      className="mt-4 bg-orangered text-white font-bold py-2 px-4 rounded ml-4"
+                                      >
+                                      Buy
+                                      </button>
+                                      </div>
+                                      </div>
+                                      </div>
+                                      )}
+                                      {showPurchaseModal && (
+                                          <PurchaseModal message={purchaseMessage} onClose={closeModal} />
+                                        )}
+                                      </div>
+                                      );
+                                      };
+                                      export default UserDashboard;
+                                      
